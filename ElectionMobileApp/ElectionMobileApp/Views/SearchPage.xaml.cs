@@ -80,7 +80,7 @@ namespace ElectionMobileApp.Views
                 await Navigation.PushAsync(new VoterInfoAndSurvey(data));
             }
             else
-                await Navigation.PushAsync(new VoterInformationPage(data));
+                await Navigation.PushAsync(new VoterInfoAndSurvey(data));
 
         }
 

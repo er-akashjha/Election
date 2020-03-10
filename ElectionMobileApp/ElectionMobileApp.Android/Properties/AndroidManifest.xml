@@ -6,5 +6,11 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-	<application android:label="Elections_20.5.3.1" android:icon="@drawable/xamarin_logo"></application>
+	<uses-permission android:name="android.permission.BATTERY_STATS" />
+	<uses-permission android:name="android.permission.BIND_PRINT_SERVICE" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<application android:label="Elections_20.10.3.1" android:icon="@drawable/xamarin_logo"></application>
 </manifest>

@@ -5,7 +5,7 @@
              Title="Search Voter">
     <ContentPage.Content>
         <RelativeLayout>
-            <Image Source="indianbg.jpg" Opacity="0.7" Aspect="Fill"
+            <Image Source="indianbg.jpg" Opacity="0.2" Aspect="Fill"
                 RelativeLayout.WidthConstraint=
                   "{ConstraintExpression Type=RelativeToParent, Property=Width}"
                 RelativeLayout.HeightConstraint=
@@ -14,7 +14,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Label x:Name="lblTotalRecord" BackgroundColor="DarkGray"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" FontSize="20" FontAttributes="Bold"></Label>
             <SearchBar x:Name="txtSearch" Placeholder="Search" VerticalOptions="CenterAndExpand" Grid.Row="1" TextChanged="OnSearchTextChanged" />
@@ -27,11 +26,13 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"></RowDefinition>
                                     <RowDefinition Height="auto"></RowDefinition>
-                                </Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
+                                        
+                                    </Grid.ColumnDefinitions>
                                 <Label x:Name="lblVoterName" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Text="{Binding Name}" Grid.Row="0" Grid.Column="0" Margin="0" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="18" Padding="6,0,0,0" ></Label>
@@ -69,6 +70,11 @@
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
+
+
+
+
+
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

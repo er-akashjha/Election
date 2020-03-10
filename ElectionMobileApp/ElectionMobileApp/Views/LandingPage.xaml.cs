@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElectionMobileApp.Views.mama;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,7 @@ namespace ElectionMobileApp.Views
                     }
                 case "Other":
                     {
+                        await Navigation.PushAsync(new addMessage());
                         break;
                     }
                 case "Language":

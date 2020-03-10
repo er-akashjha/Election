@@ -19,9 +19,13 @@ namespace ElectionMobileApp.Views.SurveyViews
         CommonMethods objCommonMethods = new CommonMethods();
         CommonLists lists = new CommonLists();
         VoterInformation vi;
+        SQLiteVoterInformationExtended sQLiteVoterInformationExtended;
+        VoterInformationExtended objVoterInformationExtended;
         public VoterSurveyPage()
         {
             InitializeComponent();
+            sQLiteVoterInformationExtended = new SQLiteVoterInformationExtended();
+            objVoterInformationExtended = new VoterInformationExtended();
             ddlCaste.ItemsSource = lists.getCaste();
             ddlOccupation.ItemsSource = lists.getOccupation();
         }
@@ -30,13 +34,17 @@ namespace ElectionMobileApp.Views.SurveyViews
             InitializeComponent();
             // viewModel = new VoterInformationViewModel();
             //Here add the logic to get only those which is missing.
+            sQLiteVoterInformationExtended = new SQLiteVoterInformationExtended();
+            objVoterInformationExtended = new VoterInformationExtended();
+
             ddlCaste.ItemsSource = lists.getCaste();
             ddlOccupation.ItemsSource = lists.getOccupation();
             setData(selectedData);
         }
         private void setData(VoterInformation info)
         {
-             vi = info;
+            vi = info;
+            objVoterInformationExtended.ID = vi.ID;
             lblAddress.Text = info.Address;
             lblAgeGender.Text = info.Age + " " + info.Gender;
             lblAssembly.Text = info.Assembly;
@@ -48,6 +56,45 @@ namespace ElectionMobileApp.Views.SurveyViews
             lblSrno.Text = info.SNo.ToString();
             lblVillage.Text = info.Village;
             lblVoterID.Text = info.VoterID;
+
+            var extendedData = sQLiteVoterInformationExtended.Get(vi.ID);
+            if (extendedData != null)
+            {
+                objVoterInformationExtended = extendedData;
+                if (extendedData.isVotingUs != null && extendedData.isVotingUs != "")
+                {
+                    switch (extendedData.isVotingUs)
+                    {
+                        case "OURS":
+                            {
+                               
+                                break;
+                            }
+                        case "OPPOSITE":
+                            {
+                                
+                                break;
+                            }
+                        case "DOUBTFUL":
+                            {
+                               
+                                break;
+                            }
+                    }
+                }
+                if (extendedData.isVoted)
+                {
+                   
+                }
+                if (extendedData.isCalled)
+                {
+                  
+                }
+                if (extendedData.isFavourate)
+                {
+                    
+                }
+            }
         }
         private void DdlCaste_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,10 +121,10 @@ namespace ElectionMobileApp.Views.SurveyViews
         }
         private void btnFavourateClicked(object sender, EventArgs e)
         {
-            if (btnFav.BackgroundColor == Color.WhiteSmoke)
-                btnFav.BackgroundColor = Color.Yellow;
-            else
-                btnFav.BackgroundColor = Color.WhiteSmoke;
+            //if (btnFav.BackgroundColor == Color.WhiteSmoke)
+            //    btnFav.BackgroundColor = Color.Yellow;
+            //else
+            //    btnFav.BackgroundColor = Color.WhiteSmoke;
             //ERP : ODOO | 
         }
         private void btnOthersClicked(object sender, EventArgs e)
@@ -85,43 +132,43 @@ namespace ElectionMobileApp.Views.SurveyViews
            // await 
            Navigation.PushPopupAsync(new IsHeVotingUS());
             //ERP : ODOO | 
-            MessagingCenter.Subscribe<string>(this, "ISVoterVotingUS", (value) =>
-              {
-                  if (value == "OURS")
-                  {
-                      btnOther.BackgroundColor = Color.LightGreen;
-                      btnOther.Text = "OURS";
-                  }
-                  else if(value== "OPPOSITE")
-                  {
-                      btnOther.BackgroundColor = Color.Red;
-                      btnOther.Text = value;
-                  }
-                  else if(value=="DOUBTFUL")
-                  {
-                      btnOther.BackgroundColor = Color.Yellow;
-                      btnOther.Text = value;
-                  }
-                  else
-                  {
-                      btnOther.BackgroundColor = Color.WhiteSmoke;
-                      btnOther.Text = "OTHER";
-                  }
-              });
-           // 
+           // MessagingCenter.Subscribe<string>(this, "ISVoterVotingUS", (value) =>
+           //   {
+           //       if (value == "OURS")
+           //       {
+           //           btnOther.BackgroundColor = Color.LightGreen;
+           //           btnOther.Text = "OURS";
+           //       }
+           //       else if(value== "OPPOSITE")
+           //       {
+           //           btnOther.BackgroundColor = Color.Red;
+           //           btnOther.Text = value;
+           //       }
+           //       else if(value=="DOUBTFUL")
+           //       {
+           //           btnOther.BackgroundColor = Color.Yellow;
+           //           btnOther.Text = value;
+           //       }
+           //       else
+           //       {
+           //           btnOther.BackgroundColor = Color.WhiteSmoke;
+           //           btnOther.Text = "OTHER";
+           //       }
+           //   });
+           //// 
         }
         private void btnNonVotedClicked(object sender, EventArgs e)
         {
-            if (btnNonVoted.BackgroundColor == Color.WhiteSmoke)
-            {
-                btnNonVoted.BackgroundColor = Color.LightSkyBlue;
-                btnNonVoted.Text = "Voted";
-                    }
-            else
-            {
-                btnNonVoted.BackgroundColor = Color.WhiteSmoke;
-                btnNonVoted.Text = "NON VOTED";
-            }
+            //if (btnNonVoted.BackgroundColor == Color.WhiteSmoke)
+            //{
+            //    btnNonVoted.BackgroundColor = Color.LightSkyBlue;
+            //    btnNonVoted.Text = "Voted";
+            //        }
+            //else
+            //{
+            //    btnNonVoted.BackgroundColor = Color.WhiteSmoke;
+            //    btnNonVoted.Text = "NON VOTED";
+            //}
             //ERP : ODOO | 
         }
 

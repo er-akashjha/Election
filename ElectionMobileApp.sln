@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.584
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectionMobileApp.Android", "ElectionMobileApp\ElectionMobileApp.Android\ElectionMobileApp.Android.csproj", "{0D4C52F9-B535-449D-AB10-13336084CCF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectionMobileApp.iOS", "ElectionMobileApp\ElectionMobileApp.iOS\ElectionMobileApp.iOS.csproj", "{6491E440-DB13-457B-BAFA-43F97BE5D68C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectionMobileApp", "ElectionMobileApp\ElectionMobileApp\ElectionMobileApp.csproj", "{88B5273B-5645-4254-B509-2117549E1217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElectionMobileApp", "ElectionMobileApp\ElectionMobileApp\ElectionMobileApp.csproj", "{88B5273B-5645-4254-B509-2117549E1217}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

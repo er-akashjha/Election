@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElectionMobileApp.Views.SurveyViews.VoterSurveyPage" Title="Survey">
+    <ContentPage.Content >
+        <Grid Padding="7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--<StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" BackgroundColor="White" Padding="8">
+                --><!--<ImageButton Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="Family.png" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"></ImageButton>--><!--
+                <Button Text="Call" HeightRequest="50" FontSize="Small" BackgroundColor="WhiteSmoke" Clicked="btnCallClicked"></Button>
+                <Button x:Name="btnFav" Text="Favourate" HeightRequest="50" FontSize="Small" BackgroundColor="WhiteSmoke" Clicked="btnFavourateClicked"></Button>
+                <Button x:Name="btnOther" Text="Other" HeightRequest="50" FontSize="Small" BackgroundColor="WhiteSmoke" Clicked="btnOthersClicked"></Button>
+                <Button x:Name="btnNonVoted" Text="Non Voted" HeightRequest="50" FontSize="Small" BackgroundColor="WhiteSmoke" Clicked="btnNonVotedClicked"></Button>
+             </StackLayout>-->
+            
+            
+            
+            <ScrollView Grid.Row="1" VerticalOptions="FillAndExpand">
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label FontSize="Large" Grid.Row="0" Grid.Column="1" x:Name="lblAssembly" ></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="End" FontAttributes="Bold" Text="Name"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="1" x:Name="lblName"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="2" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Part Num"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="2" x:Name="lblPartNumber"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="3" FontAttributes="Bold" HorizontalTextAlignment="End"  Text="Village"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="3" x:Name="lblVillage"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="4" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Sr No"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="4" x:Name="lblSrno"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="5" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Age Gender"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="5" x:Name="lblAgeGender"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="6" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Voter ID"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="6" x:Name="lblVoterID"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="7" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Address"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="7" x:Name="lblAddress"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="8" FontAttributes="Bold" HorizontalTextAlignment="End" Text="House Num"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="8" x:Name="lblHouseNo"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="9" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Booth"></Label>
+                    <Label FontSize="Medium" Grid.Column="1" Grid.Row="9" x:Name="lblBooth"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="10" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Mobile 1"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="10" Padding="8">
+                        <ImageButton Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                        <ImageButton Source="FromPhoneBook.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                        <Label x:Name="lblMobile1"></Label>
+                    </StackLayout>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="11" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Mobile 2"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="11" Padding="8">
+                        <ImageButton Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                        <ImageButton Source="FromPhoneBook.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                        <Label x:Name="lblMobile2"></Label>
+                    </StackLayout>
+                    <Label Grid.Column="0" FontSize="Medium" Grid.Row="12" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Dead"></Label>
+                    <Switch Grid.Column="1" Grid.Row="12" HorizontalOptions="Center" VerticalOptions="Center" x:Name="swIsDead"  IsToggled="false" />
+
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="13" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Email ID"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="13" Padding="8">
+                        <ImageButton Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                        <Label x:Name="lblEmail"></Label>
+                    </StackLayout>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="14" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Caste"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="14" Padding="8">
+                        <Label x:Name="lblCaste"></Label>
+                        <Picker x:Name="ddlCaste" 
+                                Title="Select Caste"
+                                SelectedIndexChanged="DdlCaste_SelectedIndexChanged"/>
+                    </StackLayout>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="15" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Occupation"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="15" Padding="8">
+                        <Label x:Name="lblOccupation"></Label>
+                        <Picker x:Name="ddlOccupation" 
+                                Title="Select Occupation"
+                                SelectedIndexChanged="DdlOccupation_SelectedIndexChanged"/>
+                    </StackLayout>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="16" FontAttributes="Bold" HorizontalTextAlignment="End" Text="DOB"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="16" Padding="8">
+                        <Label x:Name="lblDOB"></Label>
+                        <ImageButton Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                    </StackLayout>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="17" FontAttributes="Bold" HorizontalTextAlignment="End" Text="New Address"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="17" Padding="8">
+                        <Label x:Name="lblNewAdd"></Label>
+                        <ImageButton Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                    </StackLayout>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="18" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Society"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="18" Padding="8">
+                        <Label x:Name="lblSociety"></Label>
+                        <ImageButton Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                    </StackLayout>
+                </Grid>
+
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

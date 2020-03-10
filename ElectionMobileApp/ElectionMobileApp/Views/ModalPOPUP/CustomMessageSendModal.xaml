@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="ElectionMobileApp.Views.CustomMessageSendModal">
+    <StackLayout 
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" Orientation="Vertical" BackgroundColor="White"
+        Padding="20, 20, 20, 20">
+        <Button FontSize="Small" BackgroundColor="WhiteSmoke" TextColor="Black" Text="Send Custom WP" Clicked="btnSendCustomWPClicked"></Button>
+        <Button FontSize="Small" BackgroundColor="WhiteSmoke" TextColor="Black" Text="Send Custom SMS" Clicked="btnSendCustomSMSClicked"></Button>
+    </StackLayout>
+</pages:PopupPage>

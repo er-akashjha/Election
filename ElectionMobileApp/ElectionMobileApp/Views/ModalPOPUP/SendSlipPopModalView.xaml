@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="ElectionMobileApp.Views.SendSlipPopModalView">
+    <StackLayout 
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" Orientation="Vertical" BackgroundColor="White"
+        Padding="20, 20, 20, 20">
+        <Button x:Name="btnSendVoterSlip" FontSize="Small" BackgroundColor="Gray" TextColor="White" Text="Send Slip of Voter" Clicked="btnSendSlipVoterClicked"></Button>
+        <Button x:Name="btnSendFamilySlip" FontSize="Small" BackgroundColor="Gray" TextColor="White" Text="Send Slip of Family" Clicked="btnSendSlipFamilyClicked"></Button>
+        <Button x:Name="btnSendSameNameSlip" FontSize="Small" BackgroundColor="Gray" TextColor="White" Text="Send Slip with same name" Clicked="btnSendSlipSameNameClicked" ></Button>
+    </StackLayout>
+</pages:PopupPage>

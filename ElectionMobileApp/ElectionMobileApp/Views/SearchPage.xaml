@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElectionMobileApp.Views.SearchPage"
+             Title="Search Voter">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image Source="indianbg.jpg" Opacity="0.7" Aspect="Fill"
+                RelativeLayout.WidthConstraint=
+                  "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint=
+                  "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+            <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblTotalRecord" BackgroundColor="DarkGray"  TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" FontSize="20" FontAttributes="Bold"></Label>
+            <SearchBar x:Name="txtSearch" Placeholder="Search" VerticalOptions="CenterAndExpand" Grid.Row="1" TextChanged="OnSearchTextChanged" />
+            <ListView x:Name="lsVoterList" HasUnevenRows="true" VerticalOptions="FillAndExpand" CachingStrategy="RecycleElement" Grid.Row="2" ItemSelected="LsVoterList_ItemSelected" ItemTapped="LsVoterList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Name}" TextColor="Black" Detail="{Binding Address}" DetailColor="Green"></TextCell>-->
+                        <ViewCell>
+                            <Grid Padding="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblVoterName" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Text="{Binding Name}" Grid.Row="0" Grid.Column="0" Margin="0" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" Padding="6,0,0,0" ></Label>
+                                <Label x:Name="lblParentName" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Text="{Binding RelativeName}" Margin="0" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" Padding="0,0,6,0" ></Label>
+                                <Label x:Name="lblVillage" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Grid.Row="1" Grid.Column="0" Margin="6,0,0,0"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Village : " />
+                                            <Span  Text="{Binding Village}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label x:Name="lblPartNumber" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" Grid.Row="1" Grid.Column="1" Margin="3,0,0,0"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="(Part No : " />
+                                            <Span Text="{Binding PartNumber}"/>
+                                            <Span Text=")" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label x:Name="lblSNo" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="End" Margin="0,0,6,0"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="15">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text=" : " />
+                                            <Span Text="{Binding SNo}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

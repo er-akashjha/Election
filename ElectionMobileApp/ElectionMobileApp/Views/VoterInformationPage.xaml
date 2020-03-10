@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElectionMobileApp.Views.VoterInformationPage" Title="Voter Information">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="Search" Clicked="Search_Clicked" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Padding="7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="6*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" Padding="8" Grid.Row="1">
+                <ImageButton x:Name="btnPhone" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="Phone.png" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" Clicked="btnCallClicked"></ImageButton>
+                <ImageButton Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="Whatsapp.png" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" Clicked="btnWhatsapp_Clicked"></ImageButton>
+                <ImageButton Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="SendSlip.png" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" Clicked="btnSendSlip_Clicked"></ImageButton>
+                <ImageButton Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="Printer.png" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" ></ImageButton>
+                <ImageButton x:Name="btnFav" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="Rating.png" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" Clicked="btnRating_Clicked"></ImageButton>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Padding="8">
+                <!--<ImageButton Aspect="AspectFit" HeightRequest="50" WidthRequest="50" Source="Family.png" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"></ImageButton>-->
+                <Button x:Name="btnFamily" Text="Family" HeightRequest="10" FontSize="Small" BackgroundColor="WhiteSmoke"></Button>
+                <Button x:Name="btnOther" Text="Other" HeightRequest="10" FontSize="Small" BackgroundColor="WhiteSmoke" Clicked="isHeVoting"></Button>
+                <Button x:Name="btnNonVoted" Text="Non Voted" HeightRequest="10" FontSize="Small" BackgroundColor="WhiteSmoke" Clicked="btnNonVotedClicked"></Button>
+                <Button x:Name="btnSurvey" Text="Survey" HeightRequest="10" FontSize="Small" BackgroundColor="WhiteSmoke" Clicked="btnSurveyClicked"></Button>
+            </StackLayout>
+            <ScrollView Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label FontSize="Large" Grid.Row="0" Grid.Column="1" x:Name="lblAssembly" ></Label>
+                         <Label FontSize="Medium" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="End" FontAttributes="Bold" Text="Name"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="1" x:Name="lblName"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="2" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Part Num"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="2" x:Name="lblPartNumber"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="3" FontAttributes="Bold" HorizontalTextAlignment="End"  Text="Village"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="3" x:Name="lblVillage"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="4" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Sr No"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="4" x:Name="lblSrno"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="5" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Age Gender"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="5" x:Name="lblAgeGender"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="6" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Voter ID"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="6" x:Name="lblVoterID"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="7" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Address"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="7" x:Name="lblAddress"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="8" FontAttributes="Bold" HorizontalTextAlignment="End" Text="House Num"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="8" x:Name="lblHouseNo"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="9" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Booth"></Label>
+                         <Label FontSize="Medium" Grid.Column="1" Grid.Row="9" x:Name="lblBooth"></Label>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="10" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Mobile 1"></Label>
+                         <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="10" Padding="8">
+                            <ImageButton Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                            <ImageButton Source="FromPhoneBook.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                            <Label x:Name="lblMobile1"></Label>
+                        </StackLayout>
+                    <Label FontSize="Medium" Grid.Column="0" Grid.Row="11" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Mobile 2"></Label>
+                         <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="11" Padding="8">
+                             <ImageButton Clicked="btnAddContactClicked" Source="AddContact.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                             <ImageButton Source="FromPhoneBook.png" WidthRequest="20" Aspect="AspectFit" HeightRequest="20" ></ImageButton>
+                             <Label x:Name="lblMobile2"></Label>
+                         </StackLayout>
+                    <Label Grid.Column="0" FontSize="Medium" Grid.Row="12" FontAttributes="Bold" HorizontalTextAlignment="End" Text="Dead"></Label>
+                         <Switch Grid.Column="1" Grid.Row="12" VerticalOptions="Center" x:Name="swIsDead"  IsToggled="false" />
+                </Grid>
+            </ScrollView>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

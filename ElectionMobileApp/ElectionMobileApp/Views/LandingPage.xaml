@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElectionMobileApp.Views.LandingPage">
+    <ContentPage.Content>
+        
+        <Grid BackgroundColor="LightGray">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="*"></RowDefinition>-->
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+                <!--<RowDefinition Height="*"></RowDefinition>-->
+            </Grid.RowDefinitions>
+            <!--<BoxView Color="LightGreen" Grid.Row="0"></BoxView>-->
+            <Grid Grid.Row="0" Padding="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                   
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnSearch" BackgroundColor="White" TextColor="LightGray" Text="Search" Grid.Row="0" Grid.Column="0" Clicked="Btn_Clicked"></Button>
+                <Button x:Name="btnList" BackgroundColor="White" Text="List" TextColor="LightGray" Grid.Row="0" Grid.Column="1" Clicked="Btn_Clicked"></Button>
+                <Button x:Name="btnSurvey" BackgroundColor="White" Text="Survey" Grid.Row="1" Grid.Column="0" Clicked="Btn_Clicked"></Button>
+                <Button x:Name="btnChart" BackgroundColor="White" Text="Charts" Grid.Row="1" Grid.Column="1" Clicked="Btn_Clicked"></Button>
+                <Button x:Name="btnOther" BackgroundColor="White" Text="Other" Grid.Row="2" Grid.Column="0" Clicked="Btn_Clicked"></Button>
+                <Button x:Name="btnLanguage" BackgroundColor="White" Text="Language" Grid.Row="2" Grid.Column="1" Clicked="Btn_Clicked"></Button>
+            </Grid>
+            
+            <Image Source="xamarin_logo.png" Grid.Row="1"></Image>
+            <!--<BoxView Color="Aqua" Grid.Row="3"></BoxView>-->
+           
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
